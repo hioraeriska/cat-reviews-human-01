@@ -12,7 +12,7 @@ REVIEW = "★☆☆☆☆ Moved my food bowl half an inch without asking. I knoc
 
 
 def main() -> int:
-    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "output")
+    out_dir = (os.environ.get("MAKEFUN_OUTPUT_DIR") or "").strip() or "output"
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "entry.txt")
     # No trailing newline: the gate counts characters and the entry
